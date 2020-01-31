@@ -260,7 +260,7 @@ CharacterController:
   m_Height: 2
   m_Radius: 0.5
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 0.1
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
@@ -301,8 +301,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bc0020f2db62ad4fad61642fcd9e760, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  throwItemForce: 10
+  holdItemPosition: {fileID: 887268055}
   playerMovement: {fileID: 593826626}
   playerInteraction: {fileID: 887268056}
+  heldItem: {fileID: 0}
 --- !u!1 &887268054
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,7 +736,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &1913611050
 BoxCollider:
@@ -775,6 +778,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 907ad5f84c089cb4a82625966d01d4ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredientCollider: {fileID: 0}
+  rb: {fileID: 0}
 --- !u!1 &1945770693
 GameObject:
   m_ObjectHideFlags: 0

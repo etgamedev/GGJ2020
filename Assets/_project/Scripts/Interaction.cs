@@ -13,17 +13,11 @@ public class Interaction : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collided with " + other.name);
         var getObject = other.gameObject.GetComponent<IInteractable>();
-
-        Debug.Log("Is interactable object?" + getObject != null);
 
         if (getObject != null)
         {
-            Debug.Log("HAAAAAAAAAAAAAAAAAAAAAAA");
             targetInteractionObj = other.gameObject;
-
-            Debug.Log(string.Format("TargetInteractionObject not null? {0}", targetInteractionObj != null));
         }
     }
 
@@ -31,19 +25,19 @@ public class Interaction : MonoBehaviour
     {
         if (other.gameObject == targetInteractionObj)
         {
-            Debug.Log("Exitusss");
             targetInteractionObj = null;
         }
     }
 
-    public void InteractWithObject()
+    public IInteractable InteractWithObject()
     {
-        Debug.Log("Try to interact with targeted object if applicable");
         if (targetInteractionObj != null)
         {
-            Debug.Log("Targeted object is not null, call interact!");
             var getObject = targetInteractionObj.GetComponent<IInteractable>();
             getObject.Interact();
+			return getObject;
         }
+		
+		return null;
     }
 }
