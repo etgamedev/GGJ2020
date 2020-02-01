@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BrewingStation : Countertop
+public class BrewingStation : Countertop, ITaskProgress
 {
     [HideInInspector] public List<IngredientData> ingredientDatas = new List<IngredientData>();
     public int maxIngredient;
@@ -18,7 +18,7 @@ public class BrewingStation : Countertop
     private AntidoteRecipeData selectedRecipeData;
     private Coroutine brewingCoroutine;
 
-    public float BrewingProgress
+    public float Progress
     {
         get
         {
@@ -45,6 +45,7 @@ public class BrewingStation : Countertop
         if (player == null) return;
         if (player.heldItem == null)
         {
+            Debug.Log("Yikes");
             if (placedItem != null)
             {
                 base.Interact(instigator);
@@ -70,7 +71,11 @@ public class BrewingStation : Countertop
 
     private void AddIngredient(GenericItem item)
     {
-        if (item == null) return;
+        if (item == null)
+        {
+            Debug.Log("cannot add null item to brewing station as ingredient");
+            return;
+        }
 
         if (ingredientDatas.Count != maxIngredient)
         {

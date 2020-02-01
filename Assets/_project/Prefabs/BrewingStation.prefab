@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968d9ca5c0a756547ac571299a340ee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brewingStation: {fileID: 7501644341682773492}
+  trackedGameobject: {fileID: 8132118917834281646}
   slider: {fileID: 7167943609300408266}
 --- !u!1 &5153390842921270899
 GameObject:

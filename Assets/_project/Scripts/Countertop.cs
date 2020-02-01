@@ -54,6 +54,7 @@ public class Countertop : MonoBehaviour, IInteractable
 
         item.transform.parent = ingredientPlacementlPosition;
         item.transform.localPosition = Vector3.zero;
+        item.ToggleColliderAndGravity(true);
         placedItem = item;
     }
 }

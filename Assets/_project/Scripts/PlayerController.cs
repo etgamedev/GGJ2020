@@ -59,7 +59,8 @@ public class PlayerController : MonoBehaviour
 
         if (heldItem != null)
 		{
-			heldItem.transform.parent = holdItemPosition;
+            itemToHold.ToggleColliderAndGravity(false);
+            heldItem.transform.parent = holdItemPosition;
 			heldItem.transform.localPosition = Vector3.zero;
 		}
 	}

@@ -28,9 +28,19 @@ public class ItemDispenser : MonoBehaviour, IInteractable
             if (player.heldItem == null)
             {
                 var dispensedItem = Instantiate(dispensingItemPrefab);
-                dispensedItem.ToggleColliderAndGravity(false);
-                player.HoldItem(dispensedItem);
+
+                StartCoroutine(LetPlayerHoldItemNextframe(player, dispensedItem));
             }
+        }
+    }
+
+    private IEnumerator LetPlayerHoldItemNextframe(PlayerController player, GenericItem item)
+    {
+        yield return null;
+
+        if (player != null)
+        {
+            player.HoldItem(item);
         }
     }
 }

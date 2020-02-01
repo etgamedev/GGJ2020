@@ -3,16 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public interface ITaskProgress
+{
+    float Progress { get; }
+}
+
 public class SliderController : MonoBehaviour
 {
-    public BrewingStation brewingStation;
+    public ITaskProgress progress;
+    public GameObject trackedGameobject;
     public Slider slider;
+
+    private void Awake()
+    {
+        if (trackedGameobject != null)
+            progress = trackedGameobject.GetComponent<ITaskProgress>();
+    }
 
     void Update()
     {
-        if (brewingStation != null && slider != null)
+        if (progress != null && slider != null)
         {
-            slider.normalizedValue = brewingStation.BrewingProgress;
+            slider.normalizedValue = progress.Progress;
         }
     }
 }
