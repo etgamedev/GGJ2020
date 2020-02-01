@@ -14,31 +14,55 @@ public class Patient : MonoBehaviour, ITaskProgress
 
     public float timeLimit;
 
-    public float timeElapsed;
+    public float timeLeft;
+
+    [Header("UI")]
+    public Image ingredient1Sprite;
+    public Image ingredient2Sprite;
+    public Image antidoteSprite;
 
     public float Progress
     {
         get
         {
-            return timeElapsed / timeLimit;
+            return timeLeft / timeLimit;
         }
+    }
+
+    private void Awake()
+    {
+        timeLeft = timeLimit;
     }
 
     private void Update()
     {
-        if (movetime)
+        if (movetime && GameManager.Instance.currentGameState == EGameState.Playing)
         {
-            timeElapsed += Time.deltaTime;
+            timeLeft -= Time.deltaTime;
 
-            if (timeElapsed >= timeLimit)
+            if (timeLeft <= 0)
             {
                 TimeLimitReached();
             }
         }
     }
 
+    public void SetRequiredAntidote(AntidoteRecipeData antidoteRecipeData)
+    {
+        if (antidoteRecipeData == null) return;
+
+        requiredAntidote = antidoteRecipeData;
+
+        ingredient1Sprite.sprite = requiredAntidote.antidoteRecipe.ingredients[0].IngredientDisplaySprite;
+        ingredient2Sprite.sprite = requiredAntidote.antidoteRecipe.ingredients[1].IngredientDisplaySprite;
+        antidoteSprite.sprite = requiredAntidote.antidoteRecipe.antidoteSprite;
+    }
+
     private void TimeLimitReached()
     {
         OnPatientTimeOut?.Invoke(this);
+
+        Destroy(this.gameObject);
     }
+
 }

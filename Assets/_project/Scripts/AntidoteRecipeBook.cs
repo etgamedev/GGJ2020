@@ -25,4 +25,11 @@ public class AntidoteRecipeBook : ScriptableObject
 
         return null;
     }
+
+    public AntidoteRecipeData GetRandomAntidote()
+    {
+        var index = Random.Range(0, antidoteRecipeDatas.Count);
+
+        return antidoteRecipeDatas[index];
+    }
 }

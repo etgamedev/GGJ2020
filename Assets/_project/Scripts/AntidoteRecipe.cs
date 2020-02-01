@@ -6,6 +6,7 @@ using UnityEngine;
 public class AntidoteRecipe : ScriptableObject
 {
     public string antidoteName;
+    public Sprite antidoteSprite;
     public List<IngredientData> ingredients;
     private Dictionary<IngredientData, int> ingredientDict = new Dictionary<IngredientData, int>();
 

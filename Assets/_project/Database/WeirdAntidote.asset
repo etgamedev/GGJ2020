@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: WeirdAntidote
   m_EditorClassIdentifier: 
   antidoteName: WeirdAntidote
+  antidoteSprite: {fileID: 373429272043942118, guid: 6b8d779836dbe6842b4d46595d9ae504,
+    type: 3}
   ingredients:
   - {fileID: 11400000, guid: 4813dc9957c73634c9b63324a9e2ceb8, type: 2}
   - {fileID: 11400000, guid: 26a7e05c89b3fd1478752958e1d5ae3b, type: 2}

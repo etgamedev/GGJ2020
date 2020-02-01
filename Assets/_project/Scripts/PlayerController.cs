@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.currentGameState != EGameState.Playing) return;
+
         if (Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
         {
             if (playerMovement.CanMove)
