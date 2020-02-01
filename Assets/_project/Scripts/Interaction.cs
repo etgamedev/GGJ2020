@@ -4,14 +4,14 @@ using UnityEngine;
 
 public interface IInteractable
 {
-    void Interact();
+    void Interact(GameObject instigator);
 }
 
 public class Interaction : MonoBehaviour
 {
     public GameObject targetInteractionObj;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         var getObject = other.gameObject.GetComponent<IInteractable>();
 
@@ -34,7 +34,7 @@ public class Interaction : MonoBehaviour
         if (targetInteractionObj != null)
         {
             var getObject = targetInteractionObj.GetComponent<IInteractable>();
-            getObject.Interact();
+            getObject.Interact(this.gameObject);
 			return getObject;
         }
 		

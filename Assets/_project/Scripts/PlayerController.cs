@@ -37,27 +37,28 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Interact"))
         {
-            var interacted = playerInteraction.InteractWithObject();
-			
-			if (interacted != null)
-			{
-				Debug.Log("Bleep");
-				heldItem = interacted as GenericItem;
-				
-				HoldItem();
-			}
+            playerInteraction.InteractWithObject();
         }
 		else if(Input.GetButtonDown("Throw"))
 		{
 			ThrowHeldItem();
 		}
     }
-	
-	private void HoldItem()
+
+    private void OnDestroy()
+    {
+        if(GameManager.Instance != null)
+        {
+            GameManager.Instance.PlayerDestroyed();
+        }
+    }
+
+    public void HoldItem(GenericItem itemToHold)
 	{
-		if (heldItem != null)
+        heldItem = itemToHold;
+
+        if (heldItem != null)
 		{
-			Debug.Log("BleepBleep");
 			heldItem.transform.parent = holdItemPosition;
 			heldItem.transform.localPosition = Vector3.zero;
 		}
