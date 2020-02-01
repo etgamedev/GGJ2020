@@ -26,7 +26,7 @@ public class BrewingStation : Countertop, ITaskProgress
         }
     }
 
-    protected override void OnCollisionEnter(Collision collision)
+    protected override void OnTriggerEnter(Collider collision)
     {
         var genericItem = collision.gameObject.GetComponent<GenericItem>();
 
@@ -45,7 +45,6 @@ public class BrewingStation : Countertop, ITaskProgress
         if (player == null) return;
         if (player.heldItem == null)
         {
-            Debug.Log("Yikes");
             if (placedItem != null)
             {
                 base.Interact(instigator);
@@ -65,7 +64,7 @@ public class BrewingStation : Countertop, ITaskProgress
     {
         if (brewing)
             brewing = false;
-
+        Debug.Log("Clearing ingredients in brewing station");
         ingredientDatas.Clear();
     }
 

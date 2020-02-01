@@ -16,15 +16,8 @@ public class AntidoteRecipe : ScriptableObject
 
     private void InitRecipe()
     {
-        Debug.Log("aaa");
         //!Build ingredient dictionary
         ParseIngredientListIntoDict(this.ingredients, out this.ingredientDict);
-
-        Debug.Log("Check ingredients for antidote " + name);
-        foreach (var item in ingredientDict)
-        {
-            Debug.Log("Ingredient: " + item.Key);
-        }
     }
 
     public bool CheckIfMatchesIngredients(List<IngredientData> ingredients)
@@ -40,17 +33,13 @@ public class AntidoteRecipe : ScriptableObject
 
         foreach(var item in checkedIngredientDict)
         {
-            Debug.Log("Ingredient: " + item.Key);
             if (!ingredientDict.ContainsKey(item.Key))
             {
-                Debug.Log("Does not contain");
                 return false;
             }
 
-            Debug.Log("Count: " + item.Value);
             if (ingredientDict[item.Key] != item.Value)
             {
-                Debug.Log("Does not match");
                 return false;
             }
         }

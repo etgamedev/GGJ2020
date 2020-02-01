@@ -28,7 +28,8 @@ public class ItemDispenser : MonoBehaviour, IInteractable
             if (player.heldItem == null)
             {
                 var dispensedItem = Instantiate(dispensingItemPrefab);
-
+                dispensedItem.ToggleColliderAndGravity(false);
+                dispensedItem.gameObject.SetActive(false);
                 StartCoroutine(LetPlayerHoldItemNextframe(player, dispensedItem));
             }
         }
@@ -40,6 +41,7 @@ public class ItemDispenser : MonoBehaviour, IInteractable
 
         if (player != null)
         {
+            item.gameObject.SetActive(true);
             player.HoldItem(item);
         }
     }

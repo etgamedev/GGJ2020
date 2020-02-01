@@ -11,14 +11,14 @@ public class Countertop : MonoBehaviour, IInteractable
 
     public int InteractPriority { get { return interactPriority; } }
 
-    protected virtual void OnCollisionEnter(Collision collision)
+    protected virtual void OnTriggerEnter(Collider collision)
     {
         var genericItem = collision.gameObject.GetComponent<GenericItem>();
 
         PlaceItemOnCounter(genericItem);
     }
 
-    protected virtual void OnCollisionExit(Collision collision)
+    protected virtual void OnTriggerExit(Collider collision)
     {
         var genericItem = collision.gameObject.GetComponent<GenericItem>();
 

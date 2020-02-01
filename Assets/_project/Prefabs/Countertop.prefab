@@ -141,6 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientPlacementlPosition: {fileID: 52529073428545908}
   placedItem: {fileID: 0}
+  interactPriority: 1
 --- !u!65 &8526795027789007336
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -152,8 +153,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Size: {x: 1, y: 3, z: 1}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!54 &64132889649377856
 Rigidbody:
   m_ObjectHideFlags: 0
