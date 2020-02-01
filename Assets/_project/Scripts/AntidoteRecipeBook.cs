@@ -2,7 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AntidoteRecipeBook : MonoBehaviour
+[System.Serializable]
+public class AntidoteRecipeData
 {
-    
+    public string antidoteName;
+    public AntidoteRecipe antidoteRecipe;
+    public AntidoteObject antidotePrefab;
+}
+
+[CreateAssetMenu]
+public class AntidoteRecipeBook : ScriptableObject
+{
+    public List<AntidoteRecipeData> antidoteRecipeDatas = new List<AntidoteRecipeData>();
+
+    public AntidoteRecipeData GetMatchingRecipe(List<IngredientData> ingredients)
+    {
+        for (int i = 0; i < antidoteRecipeDatas.Count; ++i)
+        {
+            if (antidoteRecipeDatas[i].antidoteRecipe.CheckIfMatchesIngredients(ingredients))
+                return antidoteRecipeDatas[i];
+        }
+
+        return null;
+    }
 }

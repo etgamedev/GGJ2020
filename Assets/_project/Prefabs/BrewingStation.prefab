@@ -386,8 +386,7 @@ MonoBehaviour:
   brewTime: 5
   brewElapsedTime: 0
   uiBrewingTimeBar: {fileID: 6549229464482628639}
-  currentRecipe: {fileID: 11400000, guid: 6f2255110f8ae8049976b86ca4599409, type: 2}
-  antidotePrefab: {fileID: 0}
+  antidoteRecipeBook: {fileID: 11400000, guid: 701d914f0bd4bc94d9ecf2c731af71cb, type: 2}
   brewing: 0
 --- !u!1001 &8097905304402866196
 PrefabInstance:

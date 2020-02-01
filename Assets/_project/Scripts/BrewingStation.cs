@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class BrewingStation : Countertop
 {
-    public List<IngredientData> ingredientDatas = new List<IngredientData>();
+    [HideInInspector] public List<IngredientData> ingredientDatas = new List<IngredientData>();
     public int maxIngredient;
     public float brewTime;
-    public float brewElapsedTime;
+    [HideInInspector] public float brewElapsedTime;
 
     public GameObject uiBrewingTimeBar;
 
-    public AntidoteRecipe currentRecipe;
-    public AntidoteObject antidotePrefab;
+    public AntidoteRecipeBook antidoteRecipeBook;
 
-    public bool brewing;
+    [HideInInspector] public bool brewing;
 
+    private AntidoteRecipeData selectedRecipeData;
     private Coroutine brewingCoroutine;
 
     public float BrewingProgress
@@ -81,6 +81,7 @@ public class BrewingStation : Countertop
     {
         if (CheckIfIngredientsMatchesRecipe() && !brewing)
         {
+            Debug.Log("START BREWING");
             brewingCoroutine = StartCoroutine(BrewAntidote());
 
             if (uiBrewingTimeBar != null)
@@ -106,14 +107,13 @@ public class BrewingStation : Countertop
 
     private bool CheckIfIngredientsMatchesRecipe()
     {
-        if (currentRecipe != null)
+        if (antidoteRecipeBook != null)
         {
-            var match = currentRecipe.CheckIfMatchesIngredients(ingredientDatas);
-            Debug.Log("Ingredient matches? " + match);
-            return match;
+            selectedRecipeData = antidoteRecipeBook.GetMatchingRecipe(ingredientDatas);           
+            
+            return selectedRecipeData != null;
         }
 
-        Debug.Log("Ingredient does not match");
         return false;
     }
 
@@ -132,7 +132,9 @@ public class BrewingStation : Countertop
 
     private void CreateAntidote()
     {
-        var antidote = Instantiate(antidotePrefab);
+        if (selectedRecipeData == null) return;
+
+        var antidote = Instantiate(selectedRecipeData.antidotePrefab);
 
         antidote.ToggleColliderAndGravity(true);
         PlaceItemOnCounter(antidote);
