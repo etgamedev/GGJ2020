@@ -7,7 +7,11 @@ public class Countertop : MonoBehaviour, IInteractable
     public Transform ingredientPlacementlPosition;
     public GenericItem placedItem;
 
-    public void Interact(GameObject instigator)
+    public int interactPriority = 1;
+
+    public int InteractPriority { get { return interactPriority; } }
+
+    public virtual void Interact(GameObject instigator)
     {
         var player = instigator.GetComponentInParent<PlayerController>();
 
@@ -21,7 +25,7 @@ public class Countertop : MonoBehaviour, IInteractable
         }
     }
 
-    protected void PlaceItemOnCounter(GenericItem item)
+    protected virtual void PlaceItemOnCounter(GenericItem item)
     {
         item.transform.parent = ingredientPlacementlPosition;
         item.transform.localPosition = Vector3.zero;

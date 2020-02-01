@@ -5,7 +5,11 @@ using UnityEngine;
 public class ItemDispenser : MonoBehaviour, IInteractable
 {
     public GenericItem dispensingItemPrefab;
-    public SpriteRenderer dispensingItemSpriteDisplay;
+    public SpriteRenderer dispensingItemSpriteDisplay; 
+
+    public int interactPriority = 1;
+
+    public int InteractPriority { get { return interactPriority; } }
 
     private void OnValidate()
     {
@@ -17,14 +21,12 @@ public class ItemDispenser : MonoBehaviour, IInteractable
 
     public void Interact(GameObject instigator)
     {
-        Debug.Log("Interacted with item dispenser");
         var player = instigator.GetComponentInParent<PlayerController>();
 
         if (player != null)
         {
             if (player.heldItem == null)
             {
-                Debug.Log("Give player item boi");
                 var dispensedItem = Instantiate(dispensingItemPrefab);
                 dispensedItem.ToggleColliderAndGravity(false);
                 player.HoldItem(dispensedItem);

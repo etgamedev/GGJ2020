@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Interact"))
         {
-            playerInteraction.InteractWithObject();
+            playerInteraction.TriggerInteraction();
         }
 		else if(Input.GetButtonDown("Throw"))
 		{

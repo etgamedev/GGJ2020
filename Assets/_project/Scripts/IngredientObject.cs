@@ -5,4 +5,6 @@ using UnityEngine;
 public class IngredientObject : GenericItem
 {
 	public IngredientData ingredientData;
+
+	public bool processed;
 }

@@ -4,12 +4,18 @@ using UnityEngine;
 
 public interface IInteractable
 {
+    int InteractPriority { get; }
     void Interact(GameObject instigator);
 }
 
 public class Interaction : MonoBehaviour
 {
-    public GameObject targetInteractionObj;
+    public List<GameObject> interactableObjectsInFrame;
+
+    private void LateUpdate()
+    {
+        interactableObjectsInFrame.Clear();
+    }
 
     private void OnTriggerStay(Collider other)
     {
@@ -17,27 +23,24 @@ public class Interaction : MonoBehaviour
 
         if (getObject != null)
         {
-            targetInteractionObj = other.gameObject;
+            if (!interactableObjectsInFrame.Contains(other.gameObject))
+            {
+                interactableObjectsInFrame.Add(other.gameObject);
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject == targetInteractionObj)
-        {
-            targetInteractionObj = null;
-        }
+        
     }
 
-    public IInteractable InteractWithObject()
+    public void TriggerInteraction()
     {
-        if (targetInteractionObj != null)
+        for (int i = 0; i < interactableObjectsInFrame.Count; ++i)
         {
-            var getObject = targetInteractionObj.GetComponent<IInteractable>();
+            var getObject = interactableObjectsInFrame[i].GetComponent<IInteractable>();
             getObject.Interact(this.gameObject);
-			return getObject;
         }
-		
-		return null;
     }
 }

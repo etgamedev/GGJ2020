@@ -11,6 +11,9 @@ public class GenericItem : MonoBehaviour, IInteractable, IThrowable
 {
 	public Collider ingredientCollider;
 	public Rigidbody rb;
+	public int interactPriority = 100000;
+
+	public int InteractPriority { get { return interactPriority; } }
 
 	private void Awake()
 	{
@@ -26,7 +29,7 @@ public class GenericItem : MonoBehaviour, IInteractable, IThrowable
 
 	public virtual void Interact(GameObject instigator)
 	{
-		var player = instigator.GetComponent<PlayerController>();
+		var player = instigator.GetComponentInParent<PlayerController>();
 
 		LetPlayerHoldItem(player);
 	}
