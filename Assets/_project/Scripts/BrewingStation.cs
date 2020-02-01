@@ -26,6 +26,19 @@ public class BrewingStation : Countertop
         }
     }
 
+    protected override void OnCollisionEnter(Collision collision)
+    {
+        var genericItem = collision.gameObject.GetComponent<GenericItem>();
+
+        if (genericItem != null)
+        {
+            if (placedItem == null)
+            {
+                AddIngredient(genericItem);
+            }
+        }
+    }
+
     public override void Interact(GameObject instigator)
     {
         var player = instigator.GetComponentInParent<PlayerController>();

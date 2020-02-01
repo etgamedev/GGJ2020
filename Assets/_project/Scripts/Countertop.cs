@@ -11,6 +11,26 @@ public class Countertop : MonoBehaviour, IInteractable
 
     public int InteractPriority { get { return interactPriority; } }
 
+    protected virtual void OnCollisionEnter(Collision collision)
+    {
+        var genericItem = collision.gameObject.GetComponent<GenericItem>();
+
+        PlaceItemOnCounter(genericItem);
+    }
+
+    protected virtual void OnCollisionExit(Collision collision)
+    {
+        var genericItem = collision.gameObject.GetComponent<GenericItem>();
+
+        if (genericItem !=null)
+        {
+            if (genericItem == placedItem)
+            {
+                placedItem = null;
+            }
+        }
+    }
+
     public virtual void Interact(GameObject instigator)
     {
         var player = instigator.GetComponentInParent<PlayerController>();
@@ -27,6 +47,11 @@ public class Countertop : MonoBehaviour, IInteractable
 
     protected virtual void PlaceItemOnCounter(GenericItem item)
     {
+        if (item == null) return;
+
+        if (placedItem != null)
+            return;
+
         item.transform.parent = ingredientPlacementlPosition;
         item.transform.localPosition = Vector3.zero;
         placedItem = item;
