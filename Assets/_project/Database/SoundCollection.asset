@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fadae9515ea9d7842a3dc6fd1b4bcac0, type: 3}
+  m_Name: SoundCollection
+  m_EditorClassIdentifier: 
+  audioDatasets:
+  - soundName: BGM_MainMenu
+    audioClip: {fileID: 8300000, guid: 7e58e9e9e25c07e4b834834152a52a45, type: 3}
+  - soundName: BGM_InGame
+    audioClip: {fileID: 8300000, guid: faddbfeb4f5262848a0fee7ee331515b, type: 3}
+  - soundName: SFX_Brewing
+    audioClip: {fileID: 8300000, guid: 4a99863433a9e684e8c0de4992cffe3f, type: 3}
+  - soundName: SFX_BrewingDone
+    audioClip: {fileID: 8300000, guid: f6174e6ccf3f257498b648de22cb18ae, type: 3}
+  - soundName: SFX_Dash
+    audioClip: {fileID: 8300000, guid: b4c99bba845fede44ad38795f331bd42, type: 3}
+  - soundName: SFX_DoctorSound1
+    audioClip: {fileID: 8300000, guid: f7741a618ec696f49ad828acbc9802d0, type: 3}
+  - soundName: SFX_DoctorSound2
+    audioClip: {fileID: 8300000, guid: 5413f0b1e2595764a9ff7313cc7a775a, type: 3}
+  - soundName: SFX_DoctorSound3
+    audioClip: {fileID: 8300000, guid: 5df46ebb97b855f40b30d119eca7c3e3, type: 3}
+  - soundName: SFX_DoctorWalk1
+    audioClip: {fileID: 8300000, guid: 6f3d3e7a822d03c438dbbc1789d1c247, type: 3}
+  - soundName: SFX_DoctorWalk2
+    audioClip: {fileID: 8300000, guid: 513a64fc580ff51498508b520fbfe677, type: 3}
+  - soundName: SFX_DoctorWalk3
+    audioClip: {fileID: 8300000, guid: 6f6a28e3ab6a7314c948616b2cebf67e, type: 3}
+  - soundName: SFX_DropOff1
+    audioClip: {fileID: 8300000, guid: bbe94b0981c2abf47b0a555b4f78a52d, type: 3}
+  - soundName: SFX_DropOff2
+    audioClip: {fileID: 8300000, guid: 7d6219fe548b46f459b921bde4285cfb, type: 3}
+  - soundName: SFX_DropOff3
+    audioClip: {fileID: 8300000, guid: 3805d738c9e4a4e42a0c17a615f909ae, type: 3}
+  - soundName: SFX_HospitalEnv
+    audioClip: {fileID: 8300000, guid: 4f023b6ca1e9b7443b3454011dcb9e32, type: 3}
+  - soundName: SFX_Interact1
+    audioClip: {fileID: 8300000, guid: bd015fb8ac4402e428928e1a125ab58e, type: 3}
+  - soundName: SFX_Interact2
+    audioClip: {fileID: 8300000, guid: fd88fb1b0a3170541bd260d3a2fb1351, type: 3}
+  - soundName: SFX_Interact3
+    audioClip: {fileID: 8300000, guid: 8919ddd83af0f7a4089ec6be2caa15eb, type: 3}
+  - soundName: SFX_Lose
+    audioClip: {fileID: 8300000, guid: 047888acbfedd1049829c914e7feb026, type: 3}
+  - soundName: SFX_PatientCured
+    audioClip: {fileID: 8300000, guid: 1bcd8716f488d144e96e30a14348ae37, type: 3}
+  - soundName: SFX_PatientQueue1
+    audioClip: {fileID: 8300000, guid: 207650905d6d87d45b02441e63ab13df, type: 3}
+  - soundName: SFX_PatientQueue2
+    audioClip: {fileID: 8300000, guid: 11cbed2e8fd1d024b869e8f02143e5be, type: 3}
+  - soundName: SFX_PatientQueue3
+    audioClip: {fileID: 8300000, guid: 35410b542286a98419277af5bf60d8cc, type: 3}
+  - soundName: SFX_PatientQueue4
+    audioClip: {fileID: 8300000, guid: dd343d22157be1142a814fe494ab69ae, type: 3}
+  - soundName: SFX_PatientQueue5
+    audioClip: {fileID: 8300000, guid: 0964b10319f247c47a8321abbc006d44, type: 3}
+  - soundName: SFX_Preparing3Types1
+    audioClip: {fileID: 8300000, guid: 33df1d4b0057a1a4a93291c5e51c3cf2, type: 3}
+  - soundName: SFX_Preparing3Types2
+    audioClip: {fileID: 8300000, guid: a21ab07c78e8c394db0091897852590f, type: 3}
+  - soundName: SFX_Preparing3Types3
+    audioClip: {fileID: 8300000, guid: 2c5603aa0ad7e3b42a5a9c2282bf603f, type: 3}
+  - soundName: SFX_Rubbish1
+    audioClip: {fileID: 8300000, guid: 739c3c6233b1e08489ff9041ac953344, type: 3}
+  - soundName: SFX_Rubbish2
+    audioClip: {fileID: 8300000, guid: 2d640187ab478b54693a436b4c23d18c, type: 3}
+  - soundName: SFX_TestTube1
+    audioClip: {fileID: 8300000, guid: 8ebc39f677395d147a27dd608dfbd036, type: 3}
+  - soundName: SFX_TestTube2
+    audioClip: {fileID: 8300000, guid: 47df3d764ff3f6d4f8fcd905cee838ac, type: 3}
+  - soundName: SFX_Throwing
+    audioClip: {fileID: 8300000, guid: b65031f5d88981d4097ed5d494717ad6, type: 3}
+  - soundName: SFX_UIClick1
+    audioClip: {fileID: 8300000, guid: 442c7afc4765b1643872033ed1050805, type: 3}
+  - soundName: SFX_UIClick2
+    audioClip: {fileID: 8300000, guid: 304e62af17395da4dbebed6bd2322363, type: 3}
+  - soundName: SFX_UIClick3
+    audioClip: {fileID: 8300000, guid: 821cff0be4fb77141a4ca0208d262649, type: 3}
+  - soundName: SFX_UIClick4
+    audioClip: {fileID: 8300000, guid: 13afce6064ae26b4b9935102d65520a8, type: 3}
+  - soundName: SFX_UIClick5
+    audioClip: {fileID: 8300000, guid: 714357b7f158ee544b510754af238b63, type: 3}
+  - soundName: SFX_UIClick6
+    audioClip: {fileID: 8300000, guid: 8d41cca0193e27f49b889866f606ae6c, type: 3}
+  - soundName: SFX_UIClick7
+    audioClip: {fileID: 8300000, guid: 227e6445eb5b4724487911729e6ab395, type: 3}
+  - soundName: SFX_UITimer1
+    audioClip: {fileID: 8300000, guid: cc17c18a60b83f249bf1cfc3b2e75e18, type: 3}
+  - soundName: SFX_UITimer2
+    audioClip: {fileID: 8300000, guid: dc0d97bae86fbc44981e151802030e20, type: 3}
+  - soundName: SFX_UITimer3
+    audioClip: {fileID: 8300000, guid: 2973fda071ca17d4e92adea54da3fb93, type: 3}
+  - soundName: SFX_UITimer4
+    audioClip: {fileID: 8300000, guid: 48723760801733649b2d9e3bda45e203, type: 3}
+  - soundName: SFX_UITimer5
+    audioClip: {fileID: 8300000, guid: a39f6af17671ae7499fe53eb6c8f5957, type: 3}
+  - soundName: SFX_UITimer6
+    audioClip: {fileID: 8300000, guid: 7962398890a4b9841869ddec803130d8, type: 3}
+  - soundName: SFX_UITimer7
+    audioClip: {fileID: 8300000, guid: 4361c17ed5b2a834c95c7da560157a7f, type: 3}
+  - soundName: SFX_UITimer8
+    audioClip: {fileID: 8300000, guid: bd1efc0652eb6ca4498c25a796819e1e, type: 3}
+  - soundName: SFX_UITimer9
+    audioClip: {fileID: 8300000, guid: 9b151b366baab484ba331afeba3fd2b6, type: 3}
+  - soundName: SFX_UITimer10
+    audioClip: {fileID: 8300000, guid: b037faf921d2d824c941e875ea660a68, type: 3}
+  - soundName: SFX_Win
+    audioClip: {fileID: 8300000, guid: 6248e86c3590c6a4db5edf4a09e0bbf4, type: 3}

@@ -12,7 +12,7 @@ public class AudioDataset
 [CreateAssetMenu]
 public class SoundCollection : ScriptableObject
 {
-    List<AudioDataset> audioDatasets = new List<AudioDataset>();
+    public List<AudioDataset> audioDatasets = new List<AudioDataset>();
 
     public AudioClip GetClip(string soundName)
     {
