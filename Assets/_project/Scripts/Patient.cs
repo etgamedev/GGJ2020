@@ -65,4 +65,17 @@ public class Patient : MonoBehaviour, ITaskProgress
         Destroy(this.gameObject);
     }
 
+    public void GiveAntidoteToPatient(AntidoteRecipe antidote)
+    {
+        if (requiredAntidote.antidoteRecipe != antidote)
+        {
+            OnPatientTimeOut?.Invoke(this);
+        }
+        else
+        {
+            Debug.Log("Fed correct antidote");
+        }
+
+        Destroy(this.gameObject);
+    }
 }

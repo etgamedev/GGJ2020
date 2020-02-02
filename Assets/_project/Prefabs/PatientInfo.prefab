@@ -454,8 +454,8 @@ MonoBehaviour:
     antidoteRecipe: {fileID: 0}
     antidotePrefab: {fileID: 0}
   movetime: 0
-  timeLimit: 10
-  timeLeft: 10
+  timeLimit: 15
+  timeLeft: 15
   ingredient1Sprite: {fileID: 6973940152431820078}
   ingredient2Sprite: {fileID: 6973940151124935205}
   antidoteSprite: {fileID: 6973940151299286738}

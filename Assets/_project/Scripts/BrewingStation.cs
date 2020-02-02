@@ -152,8 +152,9 @@ public class BrewingStation : Countertop, ITaskProgress
         if (selectedRecipeData == null) return;
 
         var antidote = Instantiate(selectedRecipeData.antidotePrefab);
-
         antidote.ToggleColliderAndGravity(true);
         PlaceItemOnCounter(antidote);
+
+        ingredientDatas.Clear();
     }
 }

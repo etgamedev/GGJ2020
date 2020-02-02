@@ -50,6 +50,8 @@ public class PatientManager : MonoBehaviour
         newPatient.OnPatientTimeOut += OnPatientTimeOut;
         newPatient.SetRequiredAntidote(antidoteRecipeBook.GetRandomAntidote());
 
+        activePatients.Add(newPatient);
+
         StartCoroutine(WaitBeforeActivatingPatient(0.5f, newPatient));
     }
 
@@ -107,6 +109,19 @@ public class PatientManager : MonoBehaviour
             }
 
             yield return null;
+        }
+    }
+
+    public void FeedPatient(AntidoteRecipe antidote)
+    {
+        if (activePatients.Count < 1) return;
+
+        var targetPatient = activePatients[0];
+
+        if (targetPatient != null)
+        {
+            targetPatient.GiveAntidoteToPatient(antidote);
+            activePatients.Remove(targetPatient);
         }
     }
 }
