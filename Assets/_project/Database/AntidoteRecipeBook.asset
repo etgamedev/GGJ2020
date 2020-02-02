@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   antidoteRecipeDatas:
   - antidoteName: PurpleAntidote
-    antidoteRecipe: {fileID: 11400000, guid: 6f2255110f8ae8049976b86ca4599409, type: 2}
-    antidotePrefab: {fileID: 6166069890869810268, guid: 742ecbaa98b6c094fae9d26723634d21,
+    antidoteRecipe: {fileID: 11400000, guid: 58da4430e9d1207448b39641e555b40a, type: 2}
+    antidotePrefab: {fileID: 6166069890869810268, guid: eeec1952a9e182f4db5f9f59c23da32e,
       type: 3}
   - antidoteName: RedAntidote
     antidoteRecipe: {fileID: 11400000, guid: 5fd4d757d6b7b784fba23f381c6e05af, type: 2}

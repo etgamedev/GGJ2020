@@ -18,7 +18,7 @@ MonoBehaviour:
   - soundName: BGM_InGame
     audioClip: {fileID: 8300000, guid: faddbfeb4f5262848a0fee7ee331515b, type: 3}
   - soundName: SFX_Brewing
-    audioClip: {fileID: 8300000, guid: 4a99863433a9e684e8c0de4992cffe3f, type: 3}
+    audioClip: {fileID: 8300000, guid: 688fa5aa46e96b04aa2c957cfa74a219, type: 3}
   - soundName: SFX_BrewingDone
     audioClip: {fileID: 8300000, guid: f6174e6ccf3f257498b648de22cb18ae, type: 3}
   - soundName: SFX_Dash

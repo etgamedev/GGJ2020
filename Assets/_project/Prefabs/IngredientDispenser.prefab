@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 7131915159208617204}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.639, z: -0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1}
   m_Children: []
   m_Father: {fileID: 8411047967555507931}
   m_RootOrder: 1
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dispensingItemPrefab: {fileID: 0}
-  dispensingItemSpriteDisplay: {fileID: 0}
+  dispensingItemSpriteDisplay: {fileID: 3156576254046524713}
   interactPriority: 1
 --- !u!65 &5551692370598329637
 BoxCollider:
