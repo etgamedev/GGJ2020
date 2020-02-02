@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: YellowAntidote
   m_EditorClassIdentifier: 
   antidoteName: YellowAntidote
-  antidoteSprite: {fileID: 373429272043942118, guid: 6b8d779836dbe6842b4d46595d9ae504,
-    type: 3}
+  antidoteSprite: {fileID: 21300000, guid: 73f9df5d709cb214bba24faf16b34d86, type: 3}
   ingredients:
   - {fileID: 11400000, guid: 88c95c4e967ca3e4fac2d96fc7e4c908, type: 2}
   - {fileID: 11400000, guid: 88c95c4e967ca3e4fac2d96fc7e4c908, type: 2}

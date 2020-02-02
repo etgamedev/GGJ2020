@@ -115,3 +115,7 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: b037faf921d2d824c941e875ea660a68, type: 3}
   - soundName: SFX_Win
     audioClip: {fileID: 8300000, guid: 6248e86c3590c6a4db5edf4a09e0bbf4, type: 3}
+  - soundName: SFX_FemaleDeath
+    audioClip: {fileID: 8300000, guid: d2776e68485a720468e6f7aded514ca3, type: 3}
+  - soundName: SFX_MaleDeath
+    audioClip: {fileID: 8300000, guid: 7ab52687b29041f4e9161e732746f903, type: 3}

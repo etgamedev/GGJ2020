@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: OrangeAntidote
   m_EditorClassIdentifier: 
   antidoteName: OrangeAntidote
-  antidoteSprite: {fileID: 373429272043942118, guid: 6b8d779836dbe6842b4d46595d9ae504,
-    type: 3}
+  antidoteSprite: {fileID: 21300000, guid: 857437a3817159f4bbf7d0a4ee5ea998, type: 3}
   ingredients:
   - {fileID: 11400000, guid: 88c95c4e967ca3e4fac2d96fc7e4c908, type: 2}
   - {fileID: 11400000, guid: 26a7e05c89b3fd1478752958e1d5ae3b, type: 2}

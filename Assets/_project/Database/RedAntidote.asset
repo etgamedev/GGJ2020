@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: RedAntidote
   m_EditorClassIdentifier: 
   antidoteName: RedAntidote
-  antidoteSprite: {fileID: 373429272043942118, guid: 6b8d779836dbe6842b4d46595d9ae504,
-    type: 3}
+  antidoteSprite: {fileID: 21300000, guid: bb09b845f23d1a74f89ac3af3aebe1cf, type: 3}
   ingredients:
   - {fileID: 11400000, guid: 26a7e05c89b3fd1478752958e1d5ae3b, type: 2}
   - {fileID: 11400000, guid: 26a7e05c89b3fd1478752958e1d5ae3b, type: 2}
