@@ -13,7 +13,27 @@ MonoBehaviour:
   m_Name: AntidoteRecipeBook
   m_EditorClassIdentifier: 
   antidoteRecipeDatas:
-  - antidoteName: WeirdAntidote
+  - antidoteName: PurpleAntidote
     antidoteRecipe: {fileID: 11400000, guid: 6f2255110f8ae8049976b86ca4599409, type: 2}
     antidotePrefab: {fileID: 6166069890869810268, guid: 742ecbaa98b6c094fae9d26723634d21,
+      type: 3}
+  - antidoteName: RedAntidote
+    antidoteRecipe: {fileID: 11400000, guid: 5fd4d757d6b7b784fba23f381c6e05af, type: 2}
+    antidotePrefab: {fileID: 6166069890869810268, guid: aae3afe1e964cc747a573ecbb8203172,
+      type: 3}
+  - antidoteName: YellowAntidote
+    antidoteRecipe: {fileID: 11400000, guid: d32c1ee2a0a4011428fc50f245d927ce, type: 2}
+    antidotePrefab: {fileID: 6166069890869810268, guid: fa44e04cf5546274199cdb5c4728555b,
+      type: 3}
+  - antidoteName: BlueAntidote
+    antidoteRecipe: {fileID: 11400000, guid: 7709f2fc057b97d47b8c3bd3e3bbc49b, type: 2}
+    antidotePrefab: {fileID: 6166069890869810268, guid: e97e408ac29674e4a84b226528e5df6c,
+      type: 3}
+  - antidoteName: GreenAntidote
+    antidoteRecipe: {fileID: 11400000, guid: 215904c806b289e46acfd63abb446140, type: 2}
+    antidotePrefab: {fileID: 6166069890869810268, guid: 2306a59707e85d245862a6a439e04677,
+      type: 3}
+  - antidoteName: OrangeAntidote
+    antidoteRecipe: {fileID: 11400000, guid: d20c45adc6d210b40afac55f9c426999, type: 2}
+    antidotePrefab: {fileID: 6166069890869810268, guid: ba93a2e3b68f12049ac73faecbcd3f7f,
       type: 3}

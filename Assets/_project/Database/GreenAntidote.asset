@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f16aaa2ad236fd943b5745ebec8845a3, type: 3}
+  m_Name: GreenAntidote
+  m_EditorClassIdentifier: 
+  antidoteName: GreenAntidote
+  antidoteSprite: {fileID: 373429272043942118, guid: 6b8d779836dbe6842b4d46595d9ae504,
+    type: 3}
+  ingredients:
+  - {fileID: 11400000, guid: 4813dc9957c73634c9b63324a9e2ceb8, type: 2}
+  - {fileID: 11400000, guid: 88c95c4e967ca3e4fac2d96fc7e4c908, type: 2}

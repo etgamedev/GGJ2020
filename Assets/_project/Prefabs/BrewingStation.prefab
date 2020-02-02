@@ -388,6 +388,96 @@ MonoBehaviour:
   uiBrewingTimeBar: {fileID: 6549229464482628639}
   antidoteRecipeBook: {fileID: 11400000, guid: 701d914f0bd4bc94d9ecf2c731af71cb, type: 2}
   brewing: 0
+--- !u!1001 &2382232388186486165
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8132118917834281647}
+    m_Modifications:
+    - target: {fileID: -4216859302048453862, guid: a2996c1b6087594409872a9aaaedd198,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: a2996c1b6087594409872a9aaaedd198,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: a2996c1b6087594409872a9aaaedd198,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: a2996c1b6087594409872a9aaaedd198,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: a2996c1b6087594409872a9aaaedd198,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: a2996c1b6087594409872a9aaaedd198,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: a2996c1b6087594409872a9aaaedd198,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: a2996c1b6087594409872a9aaaedd198,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: a2996c1b6087594409872a9aaaedd198,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: a2996c1b6087594409872a9aaaedd198,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: a2996c1b6087594409872a9aaaedd198,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: a2996c1b6087594409872a9aaaedd198,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: a2996c1b6087594409872a9aaaedd198,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: a2996c1b6087594409872a9aaaedd198,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: -1788821498160889408, guid: a2996c1b6087594409872a9aaaedd198,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8469494145858465668, guid: 3d1cc9044ea07784dacc63eb8c4f7af6,
+        type: 3}
+    - target: {fileID: -927199367670048503, guid: a2996c1b6087594409872a9aaaedd198,
+        type: 3}
+      propertyPath: m_Name
+      value: brewing stand
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a2996c1b6087594409872a9aaaedd198, type: 3}
 --- !u!1001 &8097905304402866196
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -395,11 +485,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 52529071497478612, guid: c24e5f2f80a46d74e95703370043d4fa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 52529071497478615, guid: c24e5f2f80a46d74e95703370043d4fa,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: fb6d49345b4cbb146ace58efea1be478, type: 2}
+    - target: {fileID: 52529071497478615, guid: c24e5f2f80a46d74e95703370043d4fa,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 52529072136266426, guid: c24e5f2f80a46d74e95703370043d4fa,
         type: 3}
       propertyPath: m_Name
