@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06fd4b5cede0c3745a667f41471aee07, type: 3}
   m_Name: IngredientBeta
   m_EditorClassIdentifier: 
-  ingredientDisplaySprite: {fileID: -6403850211127825655, guid: 6b8d779836dbe6842b4d46595d9ae504,
+  ingredientDisplaySprite: {fileID: 21300000, guid: 9e510e08a2822b84e944965869752475,
     type: 3}
   ingredientDisplayName: BetaIngredient
   ingredientType: 1
