@@ -81,4 +81,12 @@ public class GameManager : MonoBehaviour
     {
         yield return null;
     }
+
+    public void WinGame()
+    {
+        if (currentGameState == EGameState.Playing)
+        {
+            currentGameState = EGameState.ReadyToEnd;
+        }
+    }
 }

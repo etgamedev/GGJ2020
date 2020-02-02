@@ -11,6 +11,17 @@ public class Countertop : MonoBehaviour, IInteractable
 
     public int InteractPriority { get { return interactPriority; } }
 
+    private void Update()
+    {
+        if (placedItem != null)
+        {
+            if (placedItem.transform.parent != ingredientPlacementlPosition)
+            {
+                placedItem = null;
+            }
+        }
+    }
+
     protected virtual void OnTriggerEnter(Collider collision)
     {
         var genericItem = collision.gameObject.GetComponent<GenericItem>();

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BrewingStation : Countertop, ITaskProgress
 {
-    [HideInInspector] public List<IngredientData> ingredientDatas = new List<IngredientData>();
+    public List<IngredientData> ingredientDatas = new List<IngredientData>();
     public int maxIngredient;
     public float brewTime;
     [HideInInspector] public float brewElapsedTime;

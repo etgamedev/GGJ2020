@@ -20,7 +20,6 @@ public class Dispensary : Countertop
 
         if (antidote != null)
         {
-            Debug.Log("Antidote object entered");
             DispenseAntidote(antidote);
             return;
         }
@@ -29,7 +28,6 @@ public class Dispensary : Countertop
 
         if (genericItem != null)
         {
-            Debug.Log("Rubbish entered");
             Destroy(genericItem.gameObject);
         }
     }

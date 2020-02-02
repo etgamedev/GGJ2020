@@ -7,6 +7,7 @@ using System;
 public class Patient : MonoBehaviour, ITaskProgress
 {
     public Action<Patient> OnPatientTimeOut;
+    public Action<Patient> OnPatientCured;
 
     public AntidoteRecipeData requiredAntidote;
 
@@ -74,6 +75,7 @@ public class Patient : MonoBehaviour, ITaskProgress
         else
         {
             Debug.Log("Fed correct antidote");
+            OnPatientCured?.Invoke(this);
         }
 
         Destroy(this.gameObject);
