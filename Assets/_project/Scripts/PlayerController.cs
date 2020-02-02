@@ -64,6 +64,8 @@ public class PlayerController : MonoBehaviour
             itemToHold.ToggleColliderAndGravity(false);
             heldItem.transform.parent = holdItemPosition;
 			heldItem.transform.localPosition = Vector3.zero;
+
+            SoundManager.Instance.PlaySFX("SFX_Interact3");
 		}
 	}
 	

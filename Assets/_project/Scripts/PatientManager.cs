@@ -14,6 +14,7 @@ public class PatientManager : MonoBehaviour
     public TextMeshProUGUI tmDeadPatient;
     public TextMeshProUGUI tmPatientLeft;
     public TextMeshProUGUI tmTotalPatient;
+    public Animator animDeadDisplayAnimator;
 
     public float patientSpawningInterval;
     public int maxPatients;
@@ -22,6 +23,8 @@ public class PatientManager : MonoBehaviour
     public int totalPatients;
 
     public List<Patient> activePatients = new List<Patient>();
+
+    public string[] noiseClipName = { "SFX_PatientQueue1", "SFX_PatientQueue2", "SFX_PatientQueue3", "SFX_PatientQueue4", "SFX_PatientQueue5" };
 
     private int deadPatientCount;
     private float patientSpawnTimeElapsed;
@@ -37,7 +40,11 @@ public class PatientManager : MonoBehaviour
     {
         if (tmPatientDeadLimit != null)
         {
-            tmPatientDeadLimit.text = maxDeadPatients.ToString();
+            tmPatientDeadLimit.text = "/ " + maxDeadPatients.ToString();
+            if (deadPatientCount >= maxDeadPatients - 1)
+            {
+                tmPatientDeadLimit.color = Color.red;
+            }
         }
 
         if (tmDeadPatient != null)
@@ -73,7 +80,7 @@ public class PatientManager : MonoBehaviour
     private IEnumerator WaitToStartSpawning()
     {
         yield return new WaitUntil(() => GameManager.Instance.currentGameState == EGameState.Playing);
-        patientSpawnTimeElapsed = patientSpawningInterval;
+        patientSpawnTimeElapsed = patientSpawningInterval - 5;
         patientsLeft = totalPatients;
         StartSpawningPatients();
     }
@@ -96,13 +103,17 @@ public class PatientManager : MonoBehaviour
 
         activePatients.Add(newPatient);
 
+        var index = Random.Range(0, noiseClipName.Length);
+        var targetClipName = noiseClipName[index];
+
+        SoundManager.Instance.PlaySFX(targetClipName);
+
         StartCoroutine(WaitBeforeActivatingPatient(0.5f, newPatient));
     }
 
     private IEnumerator WaitBeforeActivatingPatient(float delay, Patient patientToActivate)
     {
         yield return new WaitForSeconds(delay);
-
         patientToActivate.movetime = true;
     }
 
@@ -110,6 +121,8 @@ public class PatientManager : MonoBehaviour
     {
         deadPatientCount++;
         patientsLeft--;
+        Debug.Log("Patient died, patients left" + patientsLeft);
+        animDeadDisplayAnimator.SetTrigger("ShakeSideways");
         activePatients.Remove(patient);
 
         if (deadPatientCount == maxDeadPatients)
@@ -121,6 +134,7 @@ public class PatientManager : MonoBehaviour
     private void OnPatientCured(Patient patient)
     {
         patientsLeft--;
+        Debug.Log("Patient cured, remaining: " + patientsLeft);
         if (deadPatientCount < maxDeadPatients && patientsLeft <= 0)
         {
             FinishedAllVisits();
@@ -173,12 +187,25 @@ public class PatientManager : MonoBehaviour
     {
         if (activePatients.Count < 1) return;
 
-        var targetPatient = activePatients[0];
+        var targetPatient = FindPatientThatMatchesAntidote(antidote);
 
         if (targetPatient != null)
         {
             targetPatient.GiveAntidoteToPatient(antidote);
             activePatients.Remove(targetPatient);
         }
+    }
+
+    private Patient FindPatientThatMatchesAntidote(AntidoteRecipe antidote)
+    {
+        for (int i = 0; i < activePatients.Count; ++i)
+        {
+            if (activePatients[i].requiredAntidote.antidoteRecipe == antidote)
+            {
+                return activePatients[i];
+            }
+        }
+
+        return null;
     }
 }

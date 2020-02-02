@@ -11,11 +11,15 @@ public class Patient : MonoBehaviour, ITaskProgress
 
     public AntidoteRecipeData requiredAntidote;
 
+    public Animator patientOverlayAnimator;
+
     public bool movetime;
 
     public float timeLimit;
 
     public float timeLeft;
+
+    private bool isDisabled;
 
     [Header("UI")]
     public Image ingredient1Sprite;
@@ -41,7 +45,7 @@ public class Patient : MonoBehaviour, ITaskProgress
         {
             timeLeft -= Time.deltaTime;
 
-            if (timeLeft <= 0)
+            if (timeLeft <= 0 && !isDisabled)
             {
                 TimeLimitReached();
             }
@@ -62,21 +66,43 @@ public class Patient : MonoBehaviour, ITaskProgress
     private void TimeLimitReached()
     {
         OnPatientTimeOut?.Invoke(this);
+        
+        if (patientOverlayAnimator != null)
+            patientOverlayAnimator.SetTrigger("OpenRed");
 
-        Destroy(this.gameObject);
+        var index = UnityEngine.Random.Range(0, 2);
+        if (index == 0)
+        {
+            SoundManager.Instance.PlaySFX("SFX_FemaleDeath");
+        }
+        else
+        {
+            SoundManager.Instance.PlaySFX("SFX_MaleDeath");
+        }
+
+        StartCoroutine(DelayedDestroy(1f));
     }
 
     public void GiveAntidoteToPatient(AntidoteRecipe antidote)
     {
-        if (requiredAntidote.antidoteRecipe != antidote)
+        if (requiredAntidote.antidoteRecipe == antidote)
         {
-            OnPatientTimeOut?.Invoke(this);
-        }
-        else
-        {
-            Debug.Log("Fed correct antidote");
+            SoundManager.Instance.PlaySFX("SFX_PatientCured");
+
+            if (patientOverlayAnimator != null)
+                patientOverlayAnimator.SetTrigger("OpenYellow");
+
             OnPatientCured?.Invoke(this);
+
+            StartCoroutine(DelayedDestroy(1f));
         }
+    }
+
+    private IEnumerator DelayedDestroy(float time)
+    {
+        isDisabled = true;
+
+        yield return new WaitForSeconds(time);
 
         Destroy(this.gameObject);
     }

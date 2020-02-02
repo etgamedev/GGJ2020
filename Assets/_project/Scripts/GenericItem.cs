@@ -55,6 +55,7 @@ public class GenericItem : MonoBehaviour, IInteractable, IThrowable
 	public virtual void Throw(Vector3 throwDirection)
 	{
 		ToggleColliderAndGravity(true);
+		SoundManager.Instance.PlaySFX("SFX_Throwing");
 		rb.AddForce(throwDirection, ForceMode.Impulse);
 	}
 

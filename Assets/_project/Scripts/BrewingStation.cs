@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BrewingStation : Countertop, ITaskProgress
 {
@@ -10,6 +11,10 @@ public class BrewingStation : Countertop, ITaskProgress
     [HideInInspector] public float brewElapsedTime;
 
     public GameObject uiBrewingTimeBar;
+    public Image ingredient1;
+    public Image ingredient2;
+    public Sprite defaultIngredientSprite;
+    public GameObject ingredientDisplayPanel;
 
     public AntidoteRecipeBook antidoteRecipeBook;
 
@@ -23,6 +28,36 @@ public class BrewingStation : Countertop, ITaskProgress
         get
         {
             return brewElapsedTime / brewTime;
+        }
+    }
+
+    private void Update()
+    {
+        uiBrewingTimeBar.SetActive(brewing);
+
+        if (ingredientDatas.Count > 0)
+        {
+            ingredient1.sprite = ingredientDatas[0].IngredientDisplaySprite;
+            ingredient1.gameObject.SetActive(true);
+            ingredientDisplayPanel.gameObject.SetActive(true);
+
+            if (ingredientDatas.Count > 1)
+            {
+                ingredient2.sprite = ingredientDatas[1].IngredientDisplaySprite;
+
+                ingredient2.gameObject.SetActive(true);
+            }
+            else
+            {
+                ingredient2.sprite = defaultIngredientSprite;
+                ingredient2.gameObject.SetActive(false);
+            }
+        }
+        else
+        {
+            ingredient1.sprite = defaultIngredientSprite;
+            ingredient2.sprite = defaultIngredientSprite;
+            ingredientDisplayPanel.SetActive(false);
         }
     }
 
@@ -93,6 +128,7 @@ public class BrewingStation : Countertop, ITaskProgress
             }
         }
     }
+    AudioSource brewingAudioSource;
 
     private void StartBrewing()
     {
@@ -105,6 +141,8 @@ public class BrewingStation : Countertop, ITaskProgress
             {
                 uiBrewingTimeBar.SetActive(true);
             }
+
+            brewingAudioSource = SoundManager.Instance.PlaySFXLoop("SFX_Brewing");
         }
     }
 
@@ -119,6 +157,9 @@ public class BrewingStation : Countertop, ITaskProgress
         }
 
         StopBrewing();
+
+        SoundManager.Instance.PlaySFX("SFX_BrewingDone");
+
         CreateAntidote();
     }
 
@@ -142,6 +183,9 @@ public class BrewingStation : Countertop, ITaskProgress
         }
 
         brewing = false;
+
+        if (brewingAudioSource != null)
+            brewingAudioSource.Stop();
 
         if (uiBrewingTimeBar != null)
             uiBrewingTimeBar.SetActive(false);
